@@ -1,18 +1,23 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
-@section('master.css')
-<style>
-    h1 {
-        font-size: 40px;
-        font-family: Roboto;
-        font-weight: 700;
-        color: #333;
-    }
-</style>
-@endsection
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Dashboard</div>
 
-@section('master.content')
+                <div class="panel-body">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-<h1>Hello World! Welcome to my homepage</h1>
-
+                    You are logged in!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
